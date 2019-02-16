@@ -13,7 +13,6 @@ var breathe_out_database=[
   ];
   console.log(breathe_out_database);
   localStorage.setItem('out',JSON.stringify(breathe_out_database));
-  
   var database_out=[
   {"data":document.getElementById('out1').name,
   "id":out1},
@@ -48,12 +47,11 @@ var breathe_out_database=[
    {"data":document.getElementById('out16').name,
   "id":out16}
   ];
-  
   console.log(database_out);
   localStorage.setItem('out_database',JSON.stringify(database_out));
   var selected_answers_array = [];
-var no_of_correct_answers = 0;
-var total = breathe_out_database.length;
+  var no_of_correct_answers = 0;
+  var total = breathe_out_database.length;
   function store(clicked_id)
   {
       var temp=document.getElementById(clicked_id).getAttribute("name");
@@ -70,6 +68,7 @@ var total = breathe_out_database.length;
   alert('You have already selected' +breathe_out_database.length+ '.Click on done to continue');
       return;
    }
+   
       selected_answers_array.push(temp);
       console.log(selected_answers_array); 
       localStorage.setItem('selected',selected_answers_array);
@@ -77,24 +76,42 @@ var total = breathe_out_database.length;
   
   function done()
   {
-  if(selected_answers_array.length != breathe_out_database.length)
-  {
+    if(selected_answers_array.length != breathe_out_database.length)
+    {
       return;
     }
-  for(var i = 0 ; i < selected_answers_array.length ; i++)
-  {
-  for( var j = 0 ; j < breathe_out_database.length ; j++)  
-      {
-    if(selected_answers_array[i].localeCompare(breathe_out_database[j].data) == 0)
-    {
+    for(var i = 0 ; i < selected_answers_array.length ; i++)
+     {
+      for( var j = 0 ; j < breathe_out_database.length ; j++)  
+        {
+          if(selected_answers_array[i].localeCompare(breathe_out_database[j].data) == 0)
+           {
           no_of_correct_answers++;
           localStorage.setItem('correct_out',no_of_correct_answers);
-          percent = (no_of_correct_answers*100/total) +'%';
+          percent = (no_of_correct_answers*100/total) ;
           localStorage.setItem('percentage_out',percent);
+           }
         }
-      }
       
-    }   
-    var url =  "localhost:3000/store?percentage_in=" + localStorage.getItem("percentage_in") + "&percentage_out=" + localStorage.getItem("percentage_out") + "&correct_in=" + localStorage.getItem("correct_in") + "&correct_out=" + localStorage.getItem("correct_out");
-      window.location=url; 
+      } 
+     var in_percentage=localStorage.getItem('percentage_in');
+     console.log(in_percentage);
+     var out_percentage=localStorage.getItem('percentage_out');
+     console.log(out_percentage);
+     var in_correct=localStorage.getItem('correct_in');
+     console.log(in_correct);
+     var out_correct=localStorage.getItem('correct_out');
+     console.log(out_correct);
+     var xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange= function()
+     {
+     if(this.readyState==4 && this.status==200)
+       {
+        console.log('SUCCESS!!');
+       }
+     };
+
+    xhttp.open("GET","/store?percentage_in=" + in_percentage + "&percentage_out=" + out_percentage+ "&correct_in=" + in_correct + "&correct_out=" + out_correct , true);
+    xhttp.send(); 
   }  
+  
