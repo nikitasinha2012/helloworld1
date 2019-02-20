@@ -1,15 +1,12 @@
-var score_in=localStorage.getItem('percentage_in');
-var score_out=localStorage.getItem('percentage_out');
+var score_in= parseInt(localStorage.getItem('percentage_in'));
+var score_out= parseInt(localStorage.getItem('percentage_out'));
 var score_in1=localStorage.getItem('correct_in');
 var score_out1=localStorage.getItem('correct_out');
-if(score_in>score_out)
-{
+if(score_in > score_out) {
     document.getElementById("in_score").style.backgroundColor = '#66ff33';
-}
-else{
+} else {
     document.getElementById("out_score").style.backgroundColor = '#66ff33';
 }
-
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange= function()
 {

@@ -5,6 +5,7 @@ var pgp = require('pg-promise')();
 const { Client } = require('pg')
 router.get('/',function(req, res, next) 
 {
+  console.log(req);
   var percentage_in=req.query.percentage_in;
   console.log(percentage_in);
   var percentage_out=req.query.percentage_out;
@@ -38,7 +39,7 @@ router.get('/',function(req, res, next)
   console.log(percentage_out)
   console.log(correct_in)
   console.log(correct_out)
-  
+  alert('12121');
 }
 );
 router.get('/getitem',  async(req,res,next)=>

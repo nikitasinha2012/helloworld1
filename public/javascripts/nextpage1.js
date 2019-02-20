@@ -1,5 +1,5 @@
 
-var breathe_in_database=[
+    var breathe_in_database=[
     {"data":document.getElementById('in15').name,
     "id":in15},
     {"data":document.getElementById('in10').name,
@@ -55,6 +55,7 @@ var breathe_in_database=[
     function store(clicked_id)
     {
         var temp=document.getElementById(clicked_id).getAttribute("name");
+        document.getElementById(clicked_id).style.backgroundColor = '#4d4d4d';
         for(var i = 0 ; i < selected_answers_array.length ; i++)
         {
           if(selected_answers_array[i].localeCompare(temp) == 0) 
@@ -63,11 +64,12 @@ var breathe_in_database=[
              return;
           }
         }
-        if(selected_answers_array.length == breathe_in_database.length)
-          {
-       alert('You have already selected' +breathe_in_database.length+ '.Click on next to continue');
-        return;
-          }
+        if(selected_answers_array.length == total)
+        {
+          alert('You have already selected ' +breathe_in_database.length+ '.Click on next to continue');
+          document.getElementById(clicked_id).style.backgroundColor = '#b3b3b3';
+          return;
+        }
         selected_answers_array.push(temp);
         console.log(selected_answers_array); 
         localStorage.setItem('selected',selected_answers_array);
@@ -75,8 +77,9 @@ var breathe_in_database=[
     
     function next()
     {
-      if(selected_answers_array.length != breathe_in_database.length)
+      if(selected_answers_array.length != total)
       {
+        alert('You have to choose '  +total+  ' buttons');
         return;
       }
       for(var i = 0 ; i < selected_answers_array.length ; i++)
