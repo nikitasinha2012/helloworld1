@@ -14,18 +14,18 @@ router.get('/',function(req, res, next)
   const { Pool, Client } = require('pg')
   const pool = new Pool
   ({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port: 5433,
+  user: 'dhgkxyiysznawr',
+  host: 'ec2-54-243-128-95.compute-1.amazonaws.com',
+  database: 'd78tbnrmthv937',
+  password: '5d6ddbe3aec565a83a139153065aaee3be1d9fd7dbfe8c60b8dff640f921ee22',
+  port: 5432,
 })
   const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port:5433,
+  user: 'dhgkxyiysznawr',
+  host: 'ec2-54-243-128-95.compute-1.amazonaws.com',
+  database: 'd78tbnrmthv937',
+  password: '5d6ddbe3aec565a83a139153065aaee3be1d9fd7dbfe8c60b8dff640f921ee22',
+  port:5432,
 })
  client.connect()
  client.query('INSERT into my_breathe_table (percentage_in, percentage_out,correct_in,correct_out) values ($1, $2, $3, $4)',[percentage_in, percentage_out,correct_in,correct_out], (err, res) => 
@@ -47,19 +47,16 @@ router.get('/getitem',  async(req,res,next)=>
  const { Pool, Client } = require('pg')
  const pool = new Pool
  ({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'Bibo_db',
-    password: 'Nikita201296',
-    port: 5433,
- })
+    connectionString:process.env.DATABASE_URL,
+    ssl:true
+ });
  const client = new Client(
   {
-    user: 'postgres',
-    host: 'localhost',
-    database: 'Bibo_db',
-    password: 'Nikita201296',
-    port:5433,
+    user: 'dhgkxyiysznawr',
+    host: 'ec2-54-243-128-95.compute-1.amazonaws.com',
+    database: 'd78tbnrmthv937',
+    password: '5d6ddbe3aec565a83a139153065aaee3be1d9fd7dbfe8c60b8dff640f921ee22',
+    port:5432,
   })
 await client.connect()
 const result = await client.query('SELECT percentage_in,percentage_out,correct_in,correct_out from my_breathe_table ORDER BY time DESC')
