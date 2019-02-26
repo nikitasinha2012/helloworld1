@@ -61,6 +61,7 @@
         if(selected_answers_array[i].localeCompare(temp) == 0) 
         {
            selected_answers_array.splice(i, 1);
+           document.getElementById(clicked_id).style.backgroundColor = '#b3b3b3';
            return;
         }
       }
@@ -78,26 +79,29 @@
   
   function done()
   {
-    if(selected_answers_array.length != breathe_out_database.length)
+    event.preventDefault();
+    if(selected_answers_array.length !== breathe_out_database.length)
     {
       alert('You have to choose ' +total+ ' buttons');
       return;
     }
-    for(var i = 0 ; i < selected_answers_array.length ; i++)
-     {
-      for( var j = 0 ; j < breathe_out_database.length ; j++)  
-        {
-          if(selected_answers_array[i].localeCompare(breathe_out_database[j].data) == 0)
-           {
-          no_of_correct_answers++;
-          localStorage.setItem('correct_out',no_of_correct_answers);
-          percent = (no_of_correct_answers*100/total) ;
-          localStorage.setItem('percentage_out',percent);
-           }
-        }
-      
-      } 
-     var in_percentage=localStorage.getItem('percentage_in');
+    else{
+      //console.log('do I', selected_answers_array.length !== breathe_out_database.length)
+      for(var i = 0 ; i < selected_answers_array.length ; i++)
+      {
+       for( var j = 0 ; j < breathe_out_database.length ; j++)  
+         {
+           if(selected_answers_array[i].localeCompare(breathe_out_database[j].data) == 0)
+            {
+           no_of_correct_answers++;
+           localStorage.setItem('correct_out',no_of_correct_answers);
+           percent = (no_of_correct_answers*100/total) ;
+           localStorage.setItem('percentage_out',percent);
+            }
+         }
+       
+       } 
+       var in_percentage=localStorage.getItem('percentage_in');
      console.log(in_percentage);
      var out_percentage=localStorage.getItem('percentage_out');
      console.log(out_percentage);
@@ -108,15 +112,22 @@
      var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange= function()
      {
+       console.log('state', this.readyState, this.status, this.statusText)
      if(this.readyState==4 && this.status==200)
        {
         console.log('SUCCESS!!');
         console.log(xhttp);
-        alert('SUCCESS');
+        window.location.replace("/result");
+       } else {
+         console.log("request failed")
        }
      };
 
     xhttp.open("GET","/store?percentage_in=" + in_percentage + "&percentage_out=" + out_percentage+ "&correct_in=" + in_correct + "&correct_out=" + out_correct , true);
+    xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(); 
+      }
+    
   }  
   

@@ -10,9 +10,10 @@ p{
 	text-align: center;
 	font-size: 25px;
 }
-.link{
+.link1{
 	padding-left: 50%;
-	padding-top: 20%;
+	text-decoration: underline;
+	font-size: 15px;
 	color: black;
 }
 .images{
