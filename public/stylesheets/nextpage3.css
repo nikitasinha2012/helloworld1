@@ -14,6 +14,13 @@ p{
 	padding-left: 46%;
 	color: black;
 }
+.link{
+	text-decoration: underline;
+	font-size: 15px;
+	border: navajowhite;
+	background: #D9D9D8;
+	cursor:pointer;
+}
 .images{
 	padding-left: 36%;
 }
