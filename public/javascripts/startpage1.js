@@ -35,7 +35,7 @@
             let button = document.createElement("button");
             button.setAttribute("class", `fa fa-${result[0].name} innerimages btn`);
 
-            document.getElementById("button-group").appendChild(button)
+            document.getElementById("button-group").appendChild(button);
 
         })
     
