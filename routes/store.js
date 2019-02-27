@@ -39,7 +39,6 @@ router.get('/',function(req, result, next)
   console.log(percentage_out)
   console.log(correct_in)
   console.log(correct_out)
- console.log('2222');
 }
 );
 router.get('/getitem',  async(req,res,next)=>
