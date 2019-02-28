@@ -1,18 +1,6 @@
 
-  var breathe_out_database=[
-  {"data":document.getElementById('out15').name,
-  "id":out15},
-  {"data":document.getElementById('out10').name,
-  "id":out10},
-  {"data":document.getElementById('out7').name,
-  "id":out7},
-  {"data":document.getElementById('out9').name,
-  "id":out9},
-  {"data":document.getElementById('out11').name,
-  "id":out11}
-  ];
+  var breathe_out_database = JSON.parse(localStorage.getItem('out'));
   console.log(breathe_out_database);
-  localStorage.setItem('out',JSON.stringify(breathe_out_database));
   var database_out=[
   {"data":document.getElementById('out1').name,
   "id":out1},
@@ -54,11 +42,10 @@
   var total = breathe_out_database.length;
   function store(clicked_id)
   {
-      var temp=document.getElementById(clicked_id).getAttribute("name");
       document.getElementById(clicked_id).style.backgroundColor = '#4d4d4d';
       for(var i = 0 ; i < selected_answers_array.length ; i++)
       {
-        if(selected_answers_array[i].localeCompare(temp) == 0) 
+        if(selected_answers_array[i].localeCompare(clicked_id) == 0) 
         {
            selected_answers_array.splice(i, 1);
            document.getElementById(clicked_id).style.backgroundColor = '#b3b3b3';
@@ -71,8 +58,7 @@
         alert('You have already selected ' +breathe_out_database.length+ '. Click on done to continue');
         return;
        }
-   
-      selected_answers_array.push(temp);
+      selected_answers_array.push(clicked_id);
       console.log(selected_answers_array); 
       localStorage.setItem('selected',selected_answers_array);
   }
@@ -86,21 +72,24 @@
       return;
     }
     else{
+      var no_of_correct_answers=0;
       //console.log('do I', selected_answers_array.length !== breathe_out_database.length)
       for(var i = 0 ; i < selected_answers_array.length ; i++)
       {
        for( var j = 0 ; j < breathe_out_database.length ; j++)  
          {
-           if(selected_answers_array[i].localeCompare(breathe_out_database[j].data) == 0)
+           if(selected_answers_array[i].localeCompare(breathe_out_database[j]) == 0)
             {
-           no_of_correct_answers++;
-           localStorage.setItem('correct_out',no_of_correct_answers);
-           percent = (no_of_correct_answers*100/total) ;
-           localStorage.setItem('percentage_out',percent);
+              console.log('how many')
+            no_of_correct_answers++;
             }
          }
        
        } 
+       localStorage.setItem('correct_out',no_of_correct_answers);
+           console.log('data',no_of_correct_answers,  total)
+           percent = (no_of_correct_answers*100/total) ;
+           localStorage.setItem('percentage_out',percent);
        var in_percentage=localStorage.getItem('percentage_in');
      console.log(in_percentage);
      var out_percentage=localStorage.getItem('percentage_out');
