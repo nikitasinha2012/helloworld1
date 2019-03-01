@@ -20,3 +20,14 @@ xhttp.onreadystatechange= function()
 };
 xhttp.open("GET","/store/getitem",true);
 xhttp.send(); 
+
+function tryagain(){
+    console.log('here')
+    event.preventDefault()
+    localStorage.setItem('percentage_in','0');
+    localStorage.setItem('percentage_out','0');
+    localStorage.setItem('correct_in','0');
+    localStorage.setItem('correct_out','0');
+    window.location.replace("/");
+
+}

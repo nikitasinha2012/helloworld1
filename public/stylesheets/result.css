@@ -10,10 +10,18 @@ p{
 	text-align: center;
 	font-size: 25px;
 }
-.link{
-	padding-left: 50%;
-	padding-top: 20%;
+.link1{
+	padding-left: 49%;
 	color: black;
+}
+.link{
+	font-size: 15px;
+	border: navajowhite;
+	cursor:pointer;
+}
+.linkcolour{
+	color: black;
+	text-decoration:none;
 }
 .images{
 	padding-left: 36%;

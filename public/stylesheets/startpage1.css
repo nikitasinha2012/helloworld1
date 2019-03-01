@@ -25,11 +25,19 @@ p{
 	width: 70px;
 	font-weight: 50px;
 }
-.link{
-	padding-left: 49%;
-	padding-top: 50px;
-	color: black;
-}
 .fa{
 	font-size: 26px;
+}
+.link1{
+	padding-left: 49%;
+	color: black;
+}
+.link{
+	font-size: 15px;
+	border: navajowhite;
+	cursor:pointer;
+}
+.linkcolour{
+	color: black;
+	text-decoration:none;
 }

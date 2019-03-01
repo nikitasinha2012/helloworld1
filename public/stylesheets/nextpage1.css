@@ -11,15 +11,17 @@ p{
 	font-size: 25px;
 }
 .link1{
-	padding-left: 50%;
+	padding-left: 49%;
 	color: black;
 }
 .link{
-	text-decoration: underline;
 	font-size: 15px;
 	border: navajowhite;
-	background: #D9D9D8;
 	cursor:pointer;
+}
+.linkcolour{
+	color: black;
+	text-decoration:none;
 }
 .images{
 	padding-left: 40%;
