@@ -14,14 +14,14 @@ router.get('/',function(req, result, next)
   const pool = new Pool
   ({
   user: 'roryqgrrvgjrjl',
-  host: 'ec-2-23-23-184-76.compute-1.amazonaws.com',
+  host: 'ec2-2-23-23-184-76.compute-1.amazonaws.com',
   database: 'd5kfa12hcv1faj',
   password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
   port: 5432,
 })
   const client = new Client({
   user: 'roryqgrrvgjrjl',
-  host: 'ec-2-23-23-184-76.compute-1.amazonaws.com',
+  host: 'ec2-2-23-23-184-76.compute-1.amazonaws.com',
   database: 'd5kfa12hcv1faj',
   password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
   port:5432,
@@ -48,7 +48,7 @@ router.get('/getitem',  async(req,res,next)=>
  const pool = new Pool
  ({
     user: 'roryqgrrvgjrjl',
-  host: 'ec-2-23-23-184-76.compute-1.amazonaws.com',
+  host: 'ec2-2-23-23-184-76.compute-1.amazonaws.com',
   database: 'd5kfa12hcv1faj',
   password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
   port: 5432,
@@ -56,7 +56,7 @@ router.get('/getitem',  async(req,res,next)=>
  const client = new Client(
   {
     user: 'roryqgrrvgjrjl',
-    host: 'ec-2-23-23-184-76.compute-1.amazonaws.com',
+    host: 'ec2-2-23-23-184-76.compute-1.amazonaws.com',
     database: 'd5kfa12hcv1faj',
     password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
     port:5432,
