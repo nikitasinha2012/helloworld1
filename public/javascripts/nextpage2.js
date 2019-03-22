@@ -35,6 +35,12 @@ var database_out=[
     button.setAttribute("class", `fa fa-${result[0].name} innerimages btn `);
     document.getElementById("button-group").appendChild(button);
     })
-
+    var timeleft=8;
+    var Timer=setInterval(function(){
+        timeleft--;
+        document.getElementById("countdownTimer").textContent = timeleft;
+        if(timeleft <= 0)
+            clearInterval(Timer);
+        },1000);
    
     localStorage.setItem('out',JSON.stringify(out))

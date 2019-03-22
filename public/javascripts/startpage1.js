@@ -38,5 +38,12 @@
             document.getElementById("button-group").appendChild(button);
 
         })
-    
+        var timeleft = 8;
+        var Timer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0)
+            clearInterval(Timer);
+        },1000);
+        
     localStorage.setItem('in',JSON.stringify(breathe_in_database))

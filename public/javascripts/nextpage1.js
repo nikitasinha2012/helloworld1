@@ -40,20 +40,20 @@
     var total = breathe_in_database.length;
     function store(clicked_id)
     {
-        document.getElementById(clicked_id).style.backgroundColor = '#4d4d4d';
+        document.getElementById(clicked_id).style.backgroundColor = '#ffff';
         for(var i = 0 ; i < selected_answers_array.length ; i++)
         {
           if(selected_answers_array[i].localeCompare(clicked_id) == 0) 
           {
              selected_answers_array.splice(i, 1);
-             document.getElementById(clicked_id).style.backgroundColor = '#b3b3b3';
+             document.getElementById(clicked_id).style.backgroundColor = '#7abdcb';
              return;
           }
         }
         if(selected_answers_array.length == total)
         {
           alert('You have already selected ' +breathe_in_database.length+ '.Click on next to continue');
-          document.getElementById(clicked_id).style.backgroundColor = '#b3b3b3';
+          document.getElementById(clicked_id).style.backgroundColor = '#7abdcb';
           return;
         }
         console.log('clicked', clicked_id)

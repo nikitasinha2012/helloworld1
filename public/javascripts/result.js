@@ -3,9 +3,9 @@ var score_out= parseInt(localStorage.getItem('percentage_out'));
 var score_in1=localStorage.getItem('correct_in');
 var score_out1=localStorage.getItem('correct_out');
 if(score_in > score_out) {
-    document.getElementById("in_score").style.backgroundColor = '#66ff33';
+    document.getElementById("in_score").style.backgroundColor = '#0090AD';
 } else {
-    document.getElementById("out_score").style.backgroundColor = '#66ff33';
+    document.getElementById("out_score").style.backgroundColor = '#0090AD';
 }
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange= function()

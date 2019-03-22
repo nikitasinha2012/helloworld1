@@ -1,14 +1,20 @@
 h1{
 	text-align: center;
-	font-family: sans-serif;
-    font-weight: normal;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: normal;
+	color: white;
 }
 body{
-	background-color: #d9d9d9;
+	background-image: url(../images/background2-bibo.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 p{
 	text-align: center;
 	font-size: 25px;
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .images{
 	padding-left: 36%;
@@ -20,13 +26,14 @@ p{
 	pointer-events: none;
 }
 .btn{
-	background-color: #b3b3b3;
+	background-color:#69acbd;
 	height: 70px;
 	width: 70px;
 	font-weight: 50px;
 }
 .fa{
 	font-size: 26px;
+	color: #004752
 }
 .link1{
 	padding-left: 49%;
@@ -34,7 +41,7 @@ p{
 }
 .link{
 	font-size: 15px;
-	border: navajowhite;
+
 	cursor:pointer;
 }
 .linkcolour{

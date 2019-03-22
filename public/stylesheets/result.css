@@ -1,14 +1,20 @@
 h1{
 	text-align: center;
-	font-family: sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
     font-weight: normal;
 }
 body{
-	background-color: #d9d9d9;
+	background-image: url(../images/background2-bibo.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 p{
 	text-align: center;
 	font-size: 25px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color:white;
 }
 .link1{
 	padding-left: 49%;
@@ -16,7 +22,10 @@ p{
 }
 .link{
 	font-size: 15px;
-	border: navajowhite;
+	background: #0092A8;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 3px;
 	cursor:pointer;
 }
 .linkcolour{
@@ -27,7 +36,6 @@ p{
 	padding-left: 36%;
 }
 .btn{
-	background-color: #b3b3b3;
 	height: 70px;
 	width: 70px;
 	font-weight: 50px;
@@ -37,10 +45,12 @@ p{
 }
 .table.table-bordered tbody tr
 {
-	border: 1px solid black;
+	border: 1px solid white;
+	color: white;
 }
 .table-bordered tbody tr td {
-	border: 1px solid black;
+	border: 1px solid white;
+	color: white;
 	
   }
   .table-bordered tbody tr .ta{
