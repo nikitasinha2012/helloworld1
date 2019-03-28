@@ -12,15 +12,23 @@ xhttp.onreadystatechange= function()
 {
     if(this.readyState==4 && this.status==200)
     {
-        document.getElementById("in_score").innerHTML=JSON.parse(this.responseText)['percentage_in'];
-        document.getElementById("out_score").innerHTML=JSON.parse(this.responseText)['percentage_out'];
-        document.getElementById("in_score1").innerHTML=JSON.parse(this.responseText)['correct_in'];
-        document.getElementById("out_score1").innerHTML=JSON.parse(this.responseText)['correct_out'];
+        console.log('JSON.parse(this.responseText)', JSON.parse(this.responseText)['total_participants']);
+        console.log('JSON.parse(this.responseText)', JSON.parse(this.responseText)['breathe_in_percent']);
+        console.log('JSON.parse(this.responseText)', JSON.parse(this.responseText)['breathe_out_percent']);
+        console.log('JSON.parse(this.responseText)', JSON.parse(this.responseText)['breathe_in_correct']);
+        console.log('JSON.parse(this.responseText)', JSON.parse(this.responseText)['breathe_out_correct']);
+        console.log('JSON.parse(this.responseText)', JSON.parse(this.responseText)['previous_result']);
+        document.getElementById("number1").innerHTML=JSON.parse(this.responseText)['total_participants'];
+        document.getElementById("number2").innerHTML=JSON.parse(this.responseText)['breathe_in_percent'];
+        document.getElementById("number3").innerHTML=JSON.parse(this.responseText)['breathe_out_percent'];
+        document.getElementById("in_score").innerHTML=JSON.parse(this.responseText)['previous_result']['percentage_in'];
+        document.getElementById("out_score").innerHTML=JSON.parse(this.responseText)['previous_result']['percentage_out'];
+        document.getElementById("in_score1").innerHTML=JSON.parse(this.responseText)['previous_result']['correct_in'];
+        document.getElementById("out_score1").innerHTML=JSON.parse(this.responseText)['previous_result']['correct_out'];
     }
 };
 xhttp.open("GET","/store/getitem",true);
 xhttp.send(); 
-
 function tryagain(){
     console.log('here')
     event.preventDefault()
@@ -31,3 +39,10 @@ function tryagain(){
     window.location.replace("/");
 
 }
+
+
+
+
+
+
+

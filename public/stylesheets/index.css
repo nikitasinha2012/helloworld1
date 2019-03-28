@@ -24,7 +24,7 @@ p{
 }
 
 .link1{
-	padding-left: 49%;
+	padding-left: 46%;
 	color: black;
 }
 .link{
@@ -33,7 +33,7 @@ p{
 	background: #0092A8;
     color: #fff;
     padding: 8px 16px;
-    border-radius: 3px;
+	border-radius: 3px;
 }
 .linkcolour{
 	color: #fff;

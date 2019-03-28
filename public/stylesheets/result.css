@@ -16,8 +16,13 @@ p{
 	font-family: 'Open Sans Condensed', sans-serif;
 	color:white;
 }
+h2{
+	text-align: center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color:white;
+}
 .link1{
-	padding-left: 49%;
+	padding-left: 46%;
 	color: black;
 }
 .link{
@@ -33,7 +38,7 @@ p{
 	text-decoration:none;
 }
 .images{
-	padding-left: 36%;
+	padding-left: 38%;
 }
 .btn{
 	height: 70px;
@@ -54,11 +59,11 @@ p{
 	
   }
   .table-bordered tbody tr .ta{
-	  padding-right: 60%
+	  padding-right: 63%
 	  
   }
   .table-bordered{
-	  margin-left: 52%;
+	  margin-left: 53%;
   }
   
  

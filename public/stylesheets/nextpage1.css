@@ -16,12 +16,11 @@ p{
 	color:white;
 }
 .link1{
-	padding-left: 49%;
+	padding-left: 48%;
 	color: black;
 }
 .link{
 	font-size: 15px;
-
 	cursor:pointer;
 	background: #0092A8;
     color: #fff;
@@ -33,7 +32,7 @@ p{
 	text-decoration:none;
 }
 .images{
-	padding-left: 40%;
+	padding-left: 39%;
 }
 .innerimages{
 	font-weight: 80px;

@@ -80,32 +80,31 @@
          {
            if(selected_answers_array[i].localeCompare(breathe_out_database[j]) == 0)
             {
-              console.log('how many')
             no_of_correct_answers++;
             }
          }
        
        } 
        localStorage.setItem('correct_out',no_of_correct_answers);
-           console.log('data',no_of_correct_answers,  total)
-           percent = (no_of_correct_answers*100/total) ;
-           localStorage.setItem('percentage_out',percent);
+       console.log('data',no_of_correct_answers,  total)
+       percent = (no_of_correct_answers*100/total) ;
+       localStorage.setItem('percentage_out',percent);
        var in_percentage=localStorage.getItem('percentage_in');
-     console.log(in_percentage);
-     var out_percentage=localStorage.getItem('percentage_out');
-     console.log(out_percentage);
-     var in_correct=localStorage.getItem('correct_in');
-     console.log(in_correct);
-     var out_correct=localStorage.getItem('correct_out');
-     console.log(out_correct);
-     var xhttp = new XMLHttpRequest();
+       console.log(in_percentage);
+       var out_percentage=localStorage.getItem('percentage_out');
+       console.log(out_percentage);
+       var in_correct=localStorage.getItem('correct_in');
+       console.log(in_correct);
+       var out_correct=localStorage.getItem('correct_out');
+       console.log(out_correct);
+       var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange= function()
      {
        console.log('state', this.readyState, this.status, this.statusText)
      if(this.readyState==4 && this.status==200)
        {
         console.log('SUCCESS!!');
-        console.log(xhttp);
+        // console.log(result);
         window.location.replace("/result");
        } else {
          console.log("request failed")

@@ -9,7 +9,6 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	
 }
 p{
 	text-align: center;
@@ -18,7 +17,7 @@ p{
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 .link1{
-	padding-left: 46%;
+	padding-left: 48%;
 	color: black;
 }
 .link{
@@ -34,7 +33,7 @@ p{
 	text-decoration:none;
 }
 .images{
-	padding-left: 36%;
+	padding-left: 39%;
 }
 .btn{
 	background-color:#7abdcb;
