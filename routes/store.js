@@ -13,18 +13,18 @@ router.get('/',function(req, result, next)
   const { Pool, Client } = require('pg')
   const pool = new Pool
   ({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port: 5433,
+  user: 'roryqgrrvgjrjl',
+  host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+  database: 'd5kfa12hcv1faj',
+  password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+  port: 5432,
 })
   const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port:5433,
+  user: 'roryqgrrvgjrjl',
+  host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+  database: 'd5kfa12hcv1faj',
+  password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+  port:5432,
 })
 var d = new Date();
  client.connect()
@@ -47,19 +47,19 @@ router.get('/getitem',  async(req,res,next)=>
  const { Pool, Client } = require('pg')
  const pool = new Pool
  ({
-    user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port: 5433,
+    user: 'roryqgrrvgjrjl',
+  host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+  database: 'd5kfa12hcv1faj',
+  password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+  port: 5432,
  });
  const client = new Client(
   {
-    user: 'postgres',
-    host: 'localhost',
-    database: 'Bibo_db',
-    password: 'Nikita201296',
-    port:5433,
+    user: 'roryqgrrvgjrjl',
+    host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+    database: 'd5kfa12hcv1faj',
+    password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+    port:5432,
   })
 await client.connect()
 data = {}
