@@ -17,8 +17,10 @@ p{
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 .link1{
-	padding-left: 48%;
+	text-align: center;
 	color: black;
+	padding-top: 2%;
+	padding-left: 2%;
 }
 .link{
 	font-size: 15px;
