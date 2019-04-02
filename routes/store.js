@@ -13,22 +13,22 @@ router.get('/',function(req, result, next)
   const { Pool, Client } = require('pg')
   const pool = new Pool
   ({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
+  user: 'roryqgrrvgjrjl',
+  host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+  database: 'd5kfa12hcv1faj',
+  password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
   port: 5432,
 })
   const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port:5433,
+  user: 'roryqgrrvgjrjl',
+  host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+  database: 'd5kfa12hcv1faj',
+  password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+  port:5432,
 })
 var d = new Date();
  client.connect()
- client.query('INSERT into Bibo_table (percentage_in, percentage_out,correct_in,correct_out,created_at) values ($1, $2, $3, $4,$5)',[percentage_in, percentage_out,correct_in,correct_out,d], (err, res) => 
+ client.query('INSERT into Bibo_table (percentage_in, percentage_out,correct_in,correct_out,time) values ($1, $2, $3, $4,$5)',[percentage_in, percentage_out,correct_in,correct_out,d], (err, res) => 
  {
     if (err) 
     {
@@ -47,23 +47,23 @@ router.get('/getitem',  async(req,res,next)=>
  const { Pool, Client } = require('pg')
  const pool = new Pool
  ({
-    user: 'postgres',
-  host: 'localhost',
-  database: 'Bibo_db',
-  password: 'Nikita201296',
-  port: 5433,
+    user: 'roryqgrrvgjrjl',
+  host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+  database: 'd5kfa12hcv1faj',
+  password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+  port: 5432,
  });
  const client = new Client(
   {
-    user: 'postgres',
-    host: 'localhost',
-    database: 'Bibo_db',
-    password: 'Nikita201296',
-    port:5433,
+    user: 'roryqgrrvgjrjl',
+    host: 'ec2-23-23-184-76.compute-1.amazonaws.com',
+    database: 'd5kfa12hcv1faj',
+    password: 'b70e2f501af3e750b72ef65948da3cfebf9c64c210dd25fa93073cb3fbb774fa',
+    port:5432,
   })
 await client.connect()
 data = {}
-const result = await client.query('SELECT percentage_in,percentage_out,correct_in,correct_out from Bibo_table ORDER BY created_at DESC')
+const result = await client.query('SELECT percentage_in,percentage_out,correct_in,correct_out from Bibo_table ORDER BY time DESC')
 console.log(result);
 dbQuery1 =  await client.query('SELECT COUNT(*) FROM Bibo_table');
 dbQuery2=  await client.query('SELECT ROUND(AVG(percentage_in) ,0) FROM Bibo_table');
