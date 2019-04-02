@@ -35,7 +35,7 @@ var database_out=[
     button.setAttribute("class", `fa fa-${result[0].name} innerimages btn `);
     document.getElementById("button-group").appendChild(button);
     })
-    var timeleft=8;
+    var timeleft=10;
     var Timer=setInterval(function(){
         timeleft--;
         document.getElementById("countdownTimer").textContent = timeleft;

@@ -38,7 +38,7 @@
             document.getElementById("button-group").appendChild(button);
 
         })
-        var timeleft = 8;
+        var timeleft = 10;
         var Timer = setInterval(function(){
         timeleft--;
         document.getElementById("countdowntimer").textContent = timeleft;
