@@ -21,8 +21,8 @@ xhttp.onreadystatechange= function()
         document.getElementById("number1").innerHTML=JSON.parse(this.responseText)['total_participants'];
         document.getElementById("number2").innerHTML=JSON.parse(this.responseText)['breathe_in_percent'];
         document.getElementById("number3").innerHTML=JSON.parse(this.responseText)['breathe_out_percent'];
-        document.getElementById("in_score").innerHTML=JSON.parse(this.responseText)['previous_result']['percentage_in'];
-        document.getElementById("out_score").innerHTML=JSON.parse(this.responseText)['previous_result']['percentage_out'];
+        document.getElementById("in_score").innerHTML=`${JSON.parse(this.responseText)['previous_result']['percentage_in']}%`;
+        document.getElementById("out_score").innerHTML=`${JSON.parse(this.responseText)['previous_result']['percentage_out']}%`;
         document.getElementById("in_score1").innerHTML=JSON.parse(this.responseText)['previous_result']['correct_in'];
         document.getElementById("out_score1").innerHTML=JSON.parse(this.responseText)['previous_result']['correct_out'];
     }
