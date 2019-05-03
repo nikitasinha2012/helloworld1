@@ -5,11 +5,9 @@ var pgp = require('pg-promise')();
 const { Client } = require('pg')
 router.get('/',function(req, result, next) 
 {
-  console.log(req);
-  var percentage_in=req.query.percentage_in;
-  var percentage_out=req.query.percentage_out;
-  var correct_in=req.query.correct_in;
-  var correct_out=req.query.correct_out;
+
+  console.log('nikita here' ,req);
+  var random_in=req.query.random_in;
   const { Pool, Client } = require('pg')
   const pool = new Pool
   ({
@@ -32,14 +30,12 @@ var d = new Date();
  {
     if (err) 
     {
+      console.log('faill')
       console.log(err.stack);
     };
     return result.send('success')
  });
-  console.log(percentage_in)
-  console.log(percentage_out)
-  console.log(correct_in)
-  console.log(correct_out)
+  console.log(random_in)
 }
 );
 router.get('/getitem',  async(req,res,next)=>
@@ -75,8 +71,8 @@ data['breathe_in_percent']=dbQuery2['rows'][0].round;
 data['breathe_out_percent']=dbQuery3['rows'][0].round;
 data['breathe_in_correct']=dbQuery4['rows'][0].round;
 data['breathe_out_correct']=dbQuery5['rows'][0].round;
-data['previous_result'] = result ['rows'][0]
-res.send(data)
+data['previous_result'] = result ['rows'][0];
+res.send('HI');
 // res.send(result ['rows'][0]);
 await client.end()
 });

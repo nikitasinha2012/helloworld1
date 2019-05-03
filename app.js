@@ -11,6 +11,14 @@ var nextpage3Router = require('./routes/nextpage3');
 var resultRouter = require('./routes/result');
 var storeRouter=require('./routes/store');
 var app = express();
+var cors = require('cors');
+ 
+app.use(cors({
+  'allowedHeaders': ['sessionId', 'Content-Type'],
+  'origin': '*',
+  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  'preflightContinue': false
+}))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
