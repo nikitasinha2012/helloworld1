@@ -30,7 +30,7 @@ var d = new Date();
  var percentage_out = req.query.percentage_out;
  var correct_in = req.query.correct_in;
  var correct_out = req.query.correct_out;
- await client.query('INSERT into Bibo_table (percentage_in, percentage_out,correct_in,correct_out,created_at) values ($1, $2, $3 ,$4,$5)',[percentage_in, percentage_out,correct_in,correct_out,d], (err, res) => 
+ await client.query('INSERT into Bibo_table (percentage_in, percentage_out,correct_in,correct_out,time) values ($1, $2, $3 ,$4,$5)',[percentage_in, percentage_out,correct_in,correct_out,d], (err, res) => 
  {
    console.log('request sent')
     if (err) 
@@ -67,7 +67,7 @@ router.get('/getitem',  async(req,res,next)=>
   })
 await client.connect()
 data = {}
-const result = await client.query('SELECT percentage_in,percentage_out,correct_in,correct_out from Bibo_table ORDER BY created_at DESC')
+const result = await client.query('SELECT percentage_in,percentage_out,correct_in,correct_out from Bibo_table ORDER BY time DESC')
 console.log(result);
 dbQuery1 =  await client.query('SELECT COUNT(*) FROM Bibo_table');
 dbQuery2=  await client.query('SELECT ROUND(AVG(percentage_in) ,0) FROM Bibo_table');
