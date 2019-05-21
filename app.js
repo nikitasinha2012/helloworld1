@@ -13,12 +13,7 @@ var storeRouter=require('./routes/store');
 var app = express();
 var cors = require('cors');
  
-app.use(cors({
-  'allowedHeaders': ['sessionId', 'Content-Type'],
-  'origin': '*',
-  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  'preflightContinue': false
-}))
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
